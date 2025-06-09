@@ -30,6 +30,8 @@ Your support lets me dedicate more time to:
 
 💡 Community support & outreach
 
+💖 Support My Work: [OpenCollective link]
+
 Join us in building the future of web UI!
 
 About Me – 
@@ -50,5 +52,3 @@ My Work & Impact:
 ✅ Advocacy: Write/talk about [your niche: e.g., "UI scalability" or "developer experience"].
 
 Let’s build the future of web UI together!
-
-💖 Support My Work: [OpenCollective link]
