@@ -1,0 +1,54 @@
+:root,
+:host {
+  /* ------------------------------------- */
+  --hsl-color-coding-primary: 243, 75%, 59%;
+
+  --hsl-color-coding-danger: 353, 81%, 59%;
+  /* ------------------------------------- */
+  --hsl-color-coding-danger-1: 353, 83%, 59%;
+  --hsl-color-coding-info-1: 229, 62%, 55%;
+  --hsl-color-coding-success-1: 152, 80%, 44%;
+  --hsl-color-coding-warning-1: 34, 91%, 55%;
+
+  /* ------------------------------------- */
+  --font-size-coding-tiny: 0.75rem;
+  --font-size-coding-small: 0.875rem;
+  --font-size-coding-medium: 1rem;
+  --font-size-coding-large: 1.125rem;
+
+  --line-height-coding-tiny: 1rem;
+  --line-height-coding-small: 1.25rem;
+  --line-height-coding-medium: 1.5rem;
+  --line-height-coding-large: 1.75rem;
+
+  --border-radius-coding-small: 8px;
+  --border-radius-coding-medium: 12px;
+  --border-radius-coding-large: 14px;
+
+  --border-width-coding-small: 1px;
+  --border-width-coding-medium: 2px;
+  --border-width-coding-large: 3px;
+  /* ------------------------------------- */
+
+  --rgb-color-coding-primary-1: 70, 91, 208;
+  --rgb-color-coding-danger-1: 235, 66, 86;
+  --rgb-color-coding-info-1: 70, 91, 208;
+  --rgb-color-coding-success-1: 23, 201, 100;
+  --rgb-color-coding-warning-1: 245, 165, 36;
+
+  --color-overlay: rgba(0, 0, 0, 0.175);
+  --color-coding-light: white;
+  --color-coding-dark: black;
+}
+[status="danger"] {
+  --hsl-color-coding-build: var(--hsl-color-coding-danger-1);
+}
+[status="info"] {
+  --hsl-color-coding-build: var(--hsl-color-coding-info-1);
+}
+[status="warning"] {
+  --hsl-color-coding-build: var(--hsl-color-coding-warning-1);
+}
+[status="success"] {
+  --hsl-color-coding-build: var(--hsl-color-coding-success-1);
+}

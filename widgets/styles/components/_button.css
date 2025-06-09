@@ -1,0 +1,214 @@
+:host {
+  --height-coding: 50px;
+  --width-coding: inherit;
+  --background-color-coding: hsl(var(--hsl-color-coding-primary));
+  --color-coding: whitesmoke;
+  --font-size-coding: inherit;
+  --border-radius-coding: 0.5rem;
+
+  --border-width-coding: var(--border-width-coding-build, 0px);
+  --border-style-coding: var(--border-style-coding-build, solid);
+  --border-color-coding: var(
+    --border-color-coding-build,
+    hsla(
+      var(--hsl-color-coding-build, 0, 0%, 0%),
+      var(--opacity-coding-build, 1)
+    )
+  );
+
+  --border-coding: var(--border-width-coding) var(--border-style-coding)
+    var(--border-color-coding);
+
+  --text-align-coding: center;
+
+  --border-color-coding-hover: var(--border-color-coding);
+  --outline-coding: none;
+  --outline-coding-hover: none;
+  --outline-coding-active: none;
+
+  --r-coding-spot: auto;
+}
+
+button {
+  font-family: inherit;
+  color: var(--color-coding);
+  width: var(--width-coding);
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-size: var(--font-size-coding);
+  min-height: var(--height-coding);
+  height: var(--height-coding);
+  max-height: var(--height-coding);
+  /* padding: 0 1rem; */
+  background-color: var(--background-color-coding);
+  border-radius: var(--border-radius-coding);
+
+  outline: var(--outline-coding);
+  box-shadow: var(--box-shadow-coding);
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+  & .radial-stop {
+    stop-color: var(--color-coding);
+  }
+  & .border {
+    position: absolute;
+    border-radius: inherit;
+    pointer-events: none;
+    background-color: transparent;
+    content: "";
+    height: var(--height-coding);
+    width: 100%;
+
+    left: 0;
+    top: 0;
+    border: var(--border-coding);
+
+    border-radius: var(--border-radius-coding);
+  }
+  /* gap: 5px; */
+}
+
+button .text {
+  width: 100%;
+  padding: 0 1rem;
+  flex: 1;
+  text-align: var(--text-align-coding);
+}
+button:has(.icon[name="icon-left"].filled) .text{
+  padding-left: 0 !important;
+}
+button:has(.icon[name="icon-right"].filled) .text{
+  padding-right: 0 !important;
+}
+
+button slot[name="loading"]::slotted(*) {
+  display: none;
+}
+button[data-loading="true"] slot::slotted(*),
+button[data-loading="true"] .text {
+  opacity: 0;
+}
+button[data-loading="true"] slot[name="loading"]::slotted(*) {
+  opacity: 1;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background-color: var(--background-color-coding);
+  width: 100%;
+  height: 100%;
+}
+
+button:hover {
+  & .border {
+    border-color: var(--border-color-coding-hover);
+  }
+  outline: var(--outline-coding-hover);
+}
+
+button:active {
+  & .border {
+    border-color: var(--border-color-coding-hover);
+  }
+  outline: var(--outline-coding-active);
+}
+
+button p {
+  width: fit-content;
+  height: fit-content;
+}
+
+button .spot {
+  position: absolute;
+  /* height: 15px;
+  width: 15px; */
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 50%;
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  animation: animate 1s linear;
+}
+.template slot.icon::slotted(*) {
+  position: relative;
+  height: var(--height-coding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-width: var(--min-height-coding); */
+  min-width: var(--height-coding);
+  /* width: var(--height-coding); */
+  font-size: var(--font-size-coding);
+  /* order: 10; */
+}
+
+@keyframes animate {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+  80% {
+    width: calc(var(--r-coding-spot) * 2);
+    height: calc(var(--r-coding-spot) * 2);
+  }
+  100% {
+    width: calc(var(--r-coding-spot) * 2);
+    height: calc(var(--r-coding-spot) * 2);
+    opacity: 0;
+  }
+}
+/* 
+@keyframes animate {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+} */
+
+button .loading {
+  position: absolute;
+  opacity: 0;
+  /* display: none; */
+}
+
+button[data-loading="true"]:hover {
+  /* border: none; */
+  cursor: not-allowed;
+}
+
+button[data-loading="true"] .loading {
+  position: initial;
+  left: 0;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: inherit;
+  /* background-color: inherit; */
+  width: 100%;
+  height: var(--height-coding);
+}
+
+button[data-loading="true"] .loading > * {
+  height: calc(100% - 20px);
+  min-width: 30px;
+}

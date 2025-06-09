@@ -1,0 +1,129 @@
+.template {
+  position: relative;
+}
+[hidden] .f::slotted(*) {
+  z-index: 99;
+}
+.template slot[name="options"]::slotted(*) {
+  z-index: 100;
+}
+
+[slot="options"][pin="true"]::after {
+  position: absolute;
+  content: "";
+  transform: rotate(45deg);
+  --size-coding: 20px;
+  height: var(--size-coding);
+  width: var(--size-coding);
+  border: 1px solid black;
+}
+[slot="options"][pin="true"]::after {
+  position: absolute;
+  content: "";
+  transform: rotate(45deg);
+  --size-coding: 20px;
+  height: var(--size-coding);
+  width: var(--size-coding);
+  border: 1px solid black;
+}
+
+.template ::slotted(.sticky) {
+  position: absolute;
+  z-index: 100;
+  /* background-color: var(--background-color-coding, white); */
+}
+/* bottom */
+.template.grid-horizontal-center {
+  display: grid;
+  justify-items: center;
+}
+.template ::slotted(.sticky[dir="bottom-mid"]) {
+  top: 100%;
+  left: unset;
+  right: unset;
+  bottom: unset;
+  /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="bottom-right"]) {
+  top: 100%;
+  left: 0;
+  right: unset;
+  bottom: unset;
+  /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="bottom-left"]) {
+  top: 100%;
+  left: unset;
+  right: 0;
+  bottom: unset;
+  /* background-color: var(--background-color-coding, white); */
+}
+/* top */
+.template ::slotted(.sticky[dir="top-mid"]) {
+  top: unset;
+  left: unset;
+  right: unset;
+  bottom: 100%;
+  /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="top-left"]) {
+  top: unset;
+  left: unset;
+  right: 0;
+  bottom: 100%;
+  /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="top-right"]) {
+  top: unset;
+  left: 0;
+  right: unset;
+  bottom: 100%;
+  /* background-color: var(--background-color-coding, white); */
+}
+/* left */
+.template.grid-vertical-center {
+  display: grid;
+  align-items: center;
+}
+.template ::slotted(.sticky[dir="left-mid"]) {
+  top: unset;
+  left: unset;
+  right: 100%;
+  bottom: unset;
+  /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="left-top"]) {
+  top: unset;
+  left: unset;
+  right: 100%;
+  bottom: 0;
+  /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="left-bottom"]) {
+  top: 0;
+  left: unset;
+  right: 100%;
+  bottom: unset;
+  /* background-color: var(--background-color-coding, white); */
+}
+/* right */
+.template ::slotted(.sticky[dir="right-mid"]) {
+  top: unset;
+  left: 100%;
+  right: unset;
+  bottom: unset;
+  /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="right-top"]) {
+  top: unset;
+  left: 100%;
+  right: unset;
+  bottom: 0; /* background-color: var(--background-color-coding, white); */
+}
+.template ::slotted(.sticky[dir="right-bottom"]) {
+  top: 0;
+  left: 100%;
+  right: unset;
+  bottom: unset;
+  /* background-color: var(--background-color-coding, white); */
+}

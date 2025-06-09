@@ -1,0 +1,177 @@
+
+.build-solid,
+.b-s {
+  --build-color: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    var(--opacity-coding-build, 1)
+  );
+  border: none !important;
+  --border-coding: none !important;
+  --border-width-coding: 0 !important;
+
+  --background-color-coding: var(--build-color) !important;
+  background-color: var(--build-color);
+  color: var(--color-coding, whitesmoke);
+}
+.build-shadow,
+.b-sh {
+  --build-color: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    var(--opacity-coding-build, 1)
+  );
+  border: none !important;
+  --border-coding: none !important;
+  --border-width-coding: 0 !important;
+
+  --background-color-coding: var(--build-color) !important;
+  background-color: var(--build-color);
+  color: var(--color-coding, whitesmoke);
+  box-shadow: 0 1px 5px var(--build-color);
+  --box-shadow-coding: 0 1px 5px var(--build-color);
+}
+.build-bordered,
+.b-b {
+  --build-color: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    var(--opacity-coding-build, 1)
+  );
+
+  --border-width-coding-build: 2px;
+  --border-color-coding-build: var(--build-color);
+  --border-style-coding-build: solid;
+
+  border: var(--border-width-coding-build) var(--border-style-coding-build)
+    var(--border-color-coding-build);
+  --border-coding: var(--border-width-coding-build)
+    var(--border-style-coding-build) var(--border-color-coding-build);
+
+  background-color: transparent !important;
+  --background-color-coding: transparent !important;
+
+  color: var(--build-color) !important;
+  --color-coding: var(--build-color) !important;
+}
+.build-light,
+.b-l {
+  --build-color: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    var(--opacity-coding-build, 1)
+  );
+  --build-color-2: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    0.1
+  );
+
+  border: none !important;
+  --border-coding: none !important;
+  --border-width-coding: 0 !important;
+
+  background-color: transparent;
+  --background-color-coding: transparent !important;
+
+  color: var(--build-color) !important;
+  --color-coding: var(--build-color) !important;
+  &:hover {
+    /* color: rgba(255, 255, 255, 0.204); */
+    background-color: var(--build-color-2);
+    --background-color-coding: var(--build-color-2) !important;
+  }
+}
+.build-flat,
+.b-f {
+  --build-color: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    var(--opacity-coding-build, 1)
+  );
+  --build-color-2: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    0.1
+  );
+
+  border: none !important;
+  --border-coding: none !important;
+  --border-width-coding: 0 !important;
+
+  background-color: var(--build-color-2);
+  --background-color-coding: var(--build-color-2) !important;
+
+  color: var(--build-color) !important;
+  --color-coding: var(--build-color) !important;
+}
+.build-ghost,
+.b-g {
+  --build-color: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    var(--opacity-coding-build, 1)
+  );
+
+  --border-width-coding-build: 2px;
+  --border-color-coding-build: var(--build-color);
+  --border-style-coding-build: solid;
+
+  border: var(--border-width-coding-build) var(--border-style-coding-build)
+    var(--border-color-coding-build);
+  --border-coding: var(--border-width-coding-build)
+    var(--border-style-coding-build) var(--border-color-coding-build);
+
+  background-color: transparent;
+  --background-color-coding: transparent !important;
+  color: var(--build-color) !important;
+  --color-coding: var(--build-color) !important;
+
+  &:hover {
+    background-color: var(--build-color);
+    --background-color-coding: var(--build-color) !important;
+    color: var(--color-coding, whitesmoke) !important;
+    --color-coding: whitesmoke !important;
+  }
+}
+
+.build-faded,
+.b-fd {
+  --build-color: hsla(
+    var(--hsl-color-coding-build, var(--hsl-color-coding-primary)),
+    var(--opacity-coding-build, 1)
+  );
+
+  --fade-color: 240, 3%, 77%;
+  --border-width-coding-build: 2px;
+  --border-color-coding-build: hsla(var(--fade-color), 0.2);
+  --border-style-coding-build: solid;
+
+  border: var(--border-width-coding-build) var(--border-style-coding-build)
+    var(--border-color-coding-build);
+  --border-coding: var(--border-width-coding-build)
+    var(--border-style-coding-build) var(--border-color-coding-build);
+
+  background-color: hsla(var(--fade-color), 0.2);
+  --background-color-coding: hsla(var(--fade-color), 0.2) !important;
+
+  color: var(--build-color) !important;
+  --color-coding: var(--build-color) !important;
+}
+
+.d-ol,
+.dark-overlay,
+.\@hover\:dark-overlay,
+.\@h\:dark-overlay,
+.\@h\:d-ol:hover {
+  position: relative;
+  overflow: none;
+}
+.dark-overlay:hover::after,
+.\@h\:d-ol:hover::after,
+.\@h\:dark-overlay:hover::after,
+.\@hover\:dark-overlay:hover::after {
+  pointer-events: none;
+  /* border-radius: inherit; */
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  /* backdrop-filter: blur(0.5px);
+    -webkit-backdrop-filter: blur(0.5px); */
+  width: 100%;
+  height: 100%;
+}

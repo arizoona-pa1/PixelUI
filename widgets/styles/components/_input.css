@@ -1,0 +1,586 @@
+:host {
+  /* PreventDefault */
+  border: none !important;
+  outline: none;
+  background: initial !important;
+  background-color: initial !important;
+  /* color: initial; */
+  text-indent: initial;
+  padding: initial;
+  width: initial;
+  box-shadow: none;
+  /* end PreventDefault */
+  /* step 1 1.input.css */
+  --width-coding: 100%;
+  --min-height-coding: 30px;
+  --height-coding: 50px;
+
+  --color-coding: inherit;
+  --color-coding-disabled: var(--color-coding);
+  --color-coding-filled: var(--color-coding);
+  --color-coding-hover: var(--color-coding);
+  --color-coding-focus: var(--color-coding);
+
+  --color-coding-label: inherit;
+  --color-coding-label-focus: var(--color-coding-label);
+
+  --background-color-coding: white;
+  --background-color-coding-disabled: var(--background-color-coding);
+  --background-color-coding-filled: var(--background-color-coding);
+  --background-color-coding-hover: var(--background-color-coding);
+  --background-color-coding-focus: var(--background-color-coding);
+
+  --font-family-coding: Arial, Helvetica, sans-serif;
+  --font-size-coding: 1rem;
+
+  --font-size-coding-message: 0.9rem;
+  --font-size-coding-placeholder: var(--font-size-coding);
+
+  --border-radius-coding: 0.5rem;
+
+  --border-width-coding: var(--border-width-coding-build, 1px);
+  --border-style-coding: var(--border-style-coding-build, solid);
+  --border-color-coding: var(
+    --border-color-coding-build,
+    hsla(
+      var(--hsl-color-coding-build, 0, 0%, 0%),
+      var(--opacity-coding-build, 1)
+    )
+  );
+  --border-coding: var(--border-width-coding) var(--border-style-coding)
+    var(--border-color-coding);
+
+
+  --border-width-coding-hover: var(--border-width-coding);
+  --border-style-coding-hover: var(--border-style-coding);
+  --border-color-coding-hover: var(--border-color-coding);
+  --border-coding-hover: var(--border-width-coding-hover)
+    var(--border-style-coding-hover) var(--border-color-coding-hover);
+
+  --border-width-coding-disabled: var(--border-width-coding);
+  --border-style-coding-disabled: var(--border-style-coding);
+  --border-color-coding-disabled: var(--border-color-coding);
+  --border-coding-disabled: var(--border-width-coding-disabled)
+    var(--border-style-coding-disabled) var(--border-color-coding-disabled);
+
+  --border-width-coding-focus: 2px;
+  --border-style-coding-focus: var(--border-style-coding);
+  --border-color-coding-focus: hsl(var(--hsl-color-coding-primary));
+  --border-coding-focus: var(--border-width-coding-focus)
+    var(--border-style-coding-focus) var(--border-color-coding-focus);
+
+  --border-width-coding-filled: var(--border-width-coding);
+  --border-style-coding-filled: var(--border-style-coding);
+  --border-color-coding-filled: var(--border-color-coding);
+  --border-coding-filled: var(--border-width-coding-filled)
+    var(--border-style-coding-filled) var(--border-color-coding-filled);
+
+  /* same width border in filled */
+  --color-coding-placeholder: rgba(0, 0, 0, 0.45);
+
+  /* label height should be static don't modifying */
+  --text-indent-coding: 15px;
+
+  --outline-width-coding: none;
+  --outline-style-coding: none;
+  --outline-color-coding: none;
+  --outline-coding: var(--outline-width-coding) var(--outline-style-coding)
+    var(--outline-color-coding);
+
+  --outline-width-coding-hover: var(--outline-width-coding);
+  --outline-style-coding-hover: var(--outline-style-coding);
+  --outline-color-coding-hover: var(--outline-color-coding);
+  --outline-coding-hover: var(--outline-width-coding-hover)
+    var(--outline-style-coding-hover) var(--outline-color-coding-hover);
+
+  --outline-width-coding-disabled: var(--outline-width-coding);
+  --outline-style-coding-disabled: var(--outline-style-coding);
+  --outline-color-coding-disabled: var(--outline-color-coding);
+  --outline-coding-disabled: var(--outline-width-coding-disabled)
+    var(--outline-style-coding-disabled) var(--outline-color-coding-disabled);
+
+  --outline-width-coding-focus: var(--outline-width-coding);
+  --outline-style-coding-focus: var(--outline-style-coding);
+  --outline-color-coding-focus: var(--outline-color-coding);
+  --outline-coding-focus: var(--outline-width-coding-focus)
+    var(--outline-style-coding-focus) var(--outline-color-coding-focus);
+
+  --outline-width-coding-filled: var(--outline-width-coding);
+  --outline-style-coding-filled: var(--outline-style-coding);
+  --outline-color-coding-filled: var(--outline-color-coding);
+  --outline-coding-filled: var(--outline-width-coding-filled)
+    var(--outline-style-coding-filled) var(--outline-color-coding-filled);
+
+  --transition-coding: all 0.2s linear;
+  /* mis */
+  --height-label-coding: 26px;
+  --font-size-coding-icon: 1.1rem;
+  --font-size-coding-label: 1rem;
+  --font-size-coding-label-focus: var(--font-size-coding-label);
+  --background-color-coding-strength-bar: rgb(216, 216, 216);
+  /* mis */
+}
+
+/* build on Input */
+.template {
+  &:is(.build-solid, .b-s, .build-shadow, .b-sh) {
+    --gray-color: 0, 0%, 0%;
+    --build-color: hsla(
+      var(--hsl-color-coding-build, var(--gray-color)),
+      var(--opacity-coding-build, 0.1)
+    );
+    --background-color-coding: var(--build-color) !important;
+    --color-coding: black !important;
+
+    --border-coding-hover: none !important;
+    --border-coding-filled: none !important;
+    --border-coding-focus: none !important;
+    --border-coding-disabled: none !important;
+  }
+
+  &:is(.build-bordered, .b-b) {
+    --background-color-coding: white !important;
+  }
+  &:is(.build-faded, .b-fd) {
+    --border-width-coding-focus: var(--border-width-coding);
+    --border-color-coding-focus: var(--border-color-coding);
+  }
+  &:is(.build-flat, .b-f) {
+    --border-coding-hover: none !important;
+    --border-coding-filled: none !important;
+    --border-coding-focus: none !important;
+    --border-coding-disabled: none !important;
+  }
+}
+/* end build on Input */
+/* end dark mode */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--color-coding);
+  transition: none;
+  box-shadow: 0;
+}
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-caps-lock-indicator,
+input[type="password"]::-webkit-reveal-password {
+  display: none;
+}
+
+.template {
+  /* position: relative; */
+  width: var(--width-coding);
+  color: var(--color-coding);
+  font-family: var(--font-family-coding);
+  border-radius: var(--border-radius-coding);
+  & .border {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    min-height: var(--min-height-coding);
+    height: var(--height-coding);
+    width: 100%;
+
+    border: var(--border-coding);
+    border-radius: var(--border-radius-coding);
+    outline: var(--outline-coding);
+    box-shadow: var(--box-shadow-coding);
+  }
+  & .strength-bar {
+    overflow: hidden;
+    height: 4px;
+    margin: 10px;
+    border-radius: var(--border-radius-coding);
+    background-color: var(--background-color-coding-strength-bar);
+    & .bar {
+      height: 100%;
+    }
+  }
+  & .strength-bar[data-value="weak"] .bar {
+    background-color: rgb(255, 68, 68);
+  }
+  & .strength-bar[data-value="medium"] .bar {
+    background-color: rgb(255, 183, 49);
+  }
+  & .strength-bar[data-value="strong"] .bar {
+    background-color: rgb(63 179 98);
+  }
+}
+
+/* [data-name-code="pixel"][data-type="input"] .field { */
+.template {
+  position: relative;
+  font-size: var(--font-size-coding);
+  background-color: var(--background-color-coding);
+  color: var(--color-coding);
+  width: 100%;
+  min-height: var(--min-height-coding);
+
+  height: var(--height-coding);
+  border-radius: var(--border-radius-coding);
+  display: flex;
+  &:hover {
+    & .eye-password {
+      opacity: 1 !important;
+    }
+  }
+  & .eye-password .line {
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    width: 1px;
+    height: 0px;
+    box-shadow: -1px 0 0 var(--background-color-coding);
+    background-color: var(--color-coding);
+    transition: height 0.1s ease-in-out;
+
+    transform: rotate(-45deg);
+    /* transform: translate(-50% , -50%) ; */
+    &.show {
+      height: 20px;
+    }
+  }
+
+  & .eye-password {
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    opacity: 0 !important;
+    min-width: var(--height-coding) !important;
+    max-width: var(--height-coding) !important;
+    font-size: 5px !important;
+    display: grid;
+    place-items: center;
+  }
+}
+/* filled */
+.template:has(input:not(:placeholder-shown)) {
+  background-color: var(--background-color-coding-filled);
+  color: var(--color-coding-filled);
+  & .field > .border {
+    border: var(--border-coding-filled);
+    outline: var(--outline-coding-filled);
+  }
+}
+/* hover */
+.template:hover {
+  background-color: var(--background-color-coding-hover);
+  color: var(--color-coding-hover);
+  & .border {
+    border: var(--border-coding-hover);
+    outline: var(--outline-coding-hover);
+  }
+}
+/* disabled */
+.template:has(input[disabled]) {
+  background-color: var(--background-color-coding-disabled);
+  color: var(--color-coding-disabled);
+  & .border {
+    border: var(--border-coding-disabled);
+    outline: var(--outline-coding-disabled);
+  }
+}
+/* focus */
+.template:has(input:focus) {
+  background-color: var(--background-color-coding-focus);
+  color: var(--color-coding-focus);
+  & .border {
+    border: var(--border-coding-focus);
+    outline: var(--outline-coding-focus);
+  }
+  & .eye-password {
+    opacity: 1 !important;
+  }
+}
+
+.template slot.icon::slotted(*) {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-width: var(--min-height-coding); */
+  min-width: var(--height-coding);
+  /* width: var(--height-coding); */
+  font-size: var(--font-size-coding-icon);
+  /* order: 10; */
+}
+
+.template .input {
+  position: relative;
+  flex-grow: 1;
+  & input {
+    border: none;
+    height: 100%;
+    width: calc(100% - 5px);
+    background-color: transparent;
+    color: var(--color-coding);
+    padding-left: var(--text-indent-coding);
+    font-size: var(--font-size-coding);
+    border-radius: var(--border-radius-coding);
+  }
+  & input::placeholder {
+    color: var(--color-coding-placeholder);
+    font-size: var(--font-size-coding-placeholder);
+  }
+  & input::first-letter:placeholder {
+    text-transform: uppercase;
+  }
+  & label {
+    pointer-events: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    left: 0;
+    z-index: 1;
+    color: var(--color-coding-label);
+    position: absolute;
+    top: calc(50% - var(--height-label-coding) / 2);
+    font-size: var(--font-size-coding-label);
+    height: var(--height-label-coding);
+    padding-left: var(--text-indent-coding);
+    transition: var(--transition-coding);
+    & > p {
+      z-index: 1;
+      text-wrap: nowrap;
+    }
+  }
+}
+.template .input:has(input:focus, input:not(:placeholder-shown)) {
+  & label {
+    font-size: var(--font-size-coding-label-focus);
+    color: var(--color-coding-label-focus);
+  }
+}
+/* modal test later */
+
+/* text gruop */
+.template slot.text-group::slotted(*) {
+  --color-coding: initial;
+  --background-color-coding: rgb(228, 236, 255);
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color-coding);
+  color: var(--color-coding);
+  text-wrap: nowrap;
+}
+.template slot[name="text-group-left"]::slotted(*) {
+  /* border-left-width: 0; */
+  border-right: var(--border-coding);
+}
+.template ::slotted(.first) {
+  border-top-left-radius: var(--border-radius-coding);
+  border-bottom-left-radius: var(--border-radius-coding);
+}
+.template slot[name="text-group-right"]::slotted(*) {
+  border-left: var(--border-coding);
+}
+.template ::slotted(.last) {
+  border-top-right-radius: var(--border-radius-coding);
+  border-bottom-right-radius: var(--border-radius-coding);
+}
+
+.template .input:has(input[dir="rtl"]) {
+  direction: rtl;
+  & :is(input) {
+    padding-right: var(--text-indent-coding);
+    padding-left: 0;
+  }
+  & label {
+    left: unset;
+    right: 0;
+  }
+}
+
+/* end left side icon*/
+/* holder input */
+.template .holder-input {
+  padding-left: var(--text-indent-coding);
+  padding-right: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* width: max-content; */
+  display: flex;
+  align-items: center;
+  gap: 0.175rem;
+}
+.template:has(input[dir="rtl"]) .holder-input {
+  padding-left: 0;
+  padding-right: var(--text-indent-coding);
+  direction: rtl;
+  flex-direction: row-reverse;
+}
+/* end  holder input */
+/* ------------------------------------------- */
+/* placeholder None */
+.template:is([data-version="0"], [data-version="1"])[keyframe="ease-in-out"]
+  input::placeholder {
+  opacity: 0;
+}
+/* ------------------------------------------- */
+/* version 0 input */
+
+.template[data-version="0"] {
+  & label {
+    z-index: -1;
+    transition-property: top, left, right, bottom, padding, margin;
+    top: calc(var(--height-label-coding) / -1);
+    padding: 0 10px;
+    /* margin:; */
+    align-items: flex-end;
+    margin: 0 10px;
+  }
+  & label::after {
+    position: absolute;
+    content: "";
+    margin: 0 auto;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: calc(var(--border-width-coding) + 3px);
+    background-color: var(--background-color-coding);
+  }
+}
+
+/* end version 0 input */
+/* ------------------------------------------- */
+/* ease-out-in */
+
+.template:is(
+    [data-version="0"],
+    [data-version="1"]
+  )[keyframe="ease-out-in"]:has(input:placeholder-shown):has(
+    input:not(:focus)
+  ) {
+  & .input {
+    position: unset !important;
+  }
+  &:has(input[dir="rtl"]) label {
+    left: unset;
+    right: 0;
+  }
+  & label {
+    left: 0;
+    padding: 0;
+    /* margin:; */
+    align-items: center;
+    margin: 0;
+  }
+  & label::after {
+    opacity: 0;
+  }
+}
+/* ------------------------------------------- */
+/* ease-in-out */
+
+.template:is(
+    [data-version="0"],
+    [data-version="1"]
+  )[keyframe="ease-in-out"]:has(input:placeholder-shown):has(
+    input:not(:focus)
+  ) {
+  &:has(input[dir="rtl"]) label {
+    left: unset;
+    right: 0;
+  }
+  & label {
+    top: 0;
+    left: 0;
+    padding: 0 var(--text-indent-coding);
+    /* margin:; */
+    align-items: center;
+    margin: 0;
+    height: 100%;
+  }
+  & label::after {
+    opacity: 0;
+  }
+}
+
+/* end version 1 input */
+/* ------------------------------------------- */
+.template[data-version="1"] {
+  & label {
+    transition-property: top, left, right, bottom, padding, margin;
+    top: calc(var(--height-label-coding) / -2);
+    padding: 0 10px;
+    /* margin:; */
+    align-items: center;
+    margin: 0 10px;
+  }
+  & label::after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    margin: 0 auto;
+    align-items: center;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: calc(var(--border-width-coding) + 3px);
+    background-color: var(--background-color-coding);
+  }
+}
+
+/* ------------------------------------------- */
+.template[data-version="1"][keyframe="ease-out-in"]:has(
+    input:placeholder-shown
+  ):has(input:not(:focus)) {
+  & label {
+    top: calc(var(--height-label-coding) / -1);
+  }
+}
+/* ------------------------------------------- */
+
+/* version 3 input */
+.template[data-version="3"] {
+  --height-coding: 55px;
+  --font-size-coding-label: var(--font-size-coding-tiny);
+  --font-size-coding-label-focus: var(--font-size-coding-label);
+  & label {
+    padding-top: 7px;
+    font-size: var(--font-size-coding-tiny);
+    top: 0;
+    height: calc(var(--height-coding) / 2);
+  }
+  & input,
+  .holder-input {
+    padding-top: calc(var(--height-coding) / 2);
+    padding-bottom: 7px;
+  }
+  &:has(input[dir="rtl"]) label {
+    padding-right: var(--text-indent-coding);
+  }
+}
+.template[data-version="3"]:has(input:placeholder-shown):has(
+    input:not(:focus)
+  ) {
+  & label {
+    font-size: var(--font-size-coding-tiny);
+  }
+}
+
+/* ------------------------------------------- */
+/* version 4 input */
+.template[data-version="4"] {
+  & .input {
+    position: unset !important;
+  }
+  & label {
+    top: calc(var(--height-label-coding) / -1);
+    padding: 0;
+  }
+}
+/* ------------------------------------------- */
+
+

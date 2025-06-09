@@ -1,0 +1,20 @@
+{
+    "h": "height",
+    "w": "width",
+    "bgColor": "background-color",
+    "bgc": "background-color",
+    "bg": "background",
+    "c": "color",
+    "b": "border",
+    "br": "border-radius",
+    "bc": "border-color",
+    "bw": "border-width",
+    "bs": "border-style",
+    "olo": "outline-offset",
+    "olc": "outline-color",
+    "olw": "outline-width",
+    "ols": "outline-style",
+    "bxs": "box-shadow",
+    "fv": "font-variant",
+    "fs": "font-size"
+}

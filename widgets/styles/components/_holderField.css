@@ -1,0 +1,12 @@
+
+[data-name-code="pixel"][data-box="msg"]:has([data-status]) .tp-message {
+  color: hsla(var(--hsl-color-coding-build), var(--opacity-coding-build, 1));
+}
+[data-name-code="pixel"][data-box="msg"] .tp-message {
+  color: inherit;
+  font-size: var(--font-size-coding-holder-message);
+  /* padding: 5px 0; */
+}
+[data-name-code="pixel"][data-box="msg"] .tp-message:has(p) {
+  margin: 5px 0;
+}

@@ -1,0 +1,48 @@
+.template[template="1"] {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  & .border {
+    --border-radius-coding: 0;
+    --min-height-coding: 3px;
+    --height-coding: 3px;
+    bottom: -3px;
+    top: unset;
+    right: 0;
+    left: 0;
+    border: none !important;
+    width: 100%;
+    background-color: var(--border-color-coding);
+    &::after {
+      transition: var(--transition-coding);
+      position: absolute;
+      content: "";
+      width: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      height: 100%;
+      background-color: hsl(var(--hsl-color-coding-primary));
+    }
+  }
+  &[behavior="left"] .border::after {
+    right: unset;
+    margin: unset;
+  }
+  &[behavior="right"] .border::after {
+    left: unset;
+    margin: unset;
+  }
+}
+/* behavior 1:center 2:left 3:right begin */
+
+.template[template="1"]:has(input:focus) {
+  & .border::after {
+    width: 100%;
+  }
+}
+.template[template="1"] ::slotted(.first) {
+  border-bottom-left-radius: 0 !important;
+}
+.template[template="1"] ::slotted(.last) {
+  border-bottom-right-radius: 0 !important;
+}

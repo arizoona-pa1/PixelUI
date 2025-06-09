@@ -1,0 +1,57 @@
+:host {
+  position: absolute;
+  z-index: 100;
+  /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; */
+}
+.template {
+  display: inline-block;
+  width: auto;
+}
+.backdrop.center {
+  display: grid;
+  place-content: center;
+}
+.backdrop.top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.backdrop.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.backdrop.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.backdrop.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.backdrop.top-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.backdrop.top-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.backdrop.bottom-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.backdrop.bottom-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
